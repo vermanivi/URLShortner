@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { shortUrl } = require('../services/shortUrlService')
+const { shortUrl, redirectToNewUrl } = require("../services/shortUrlService");
 
-router.post('/', shortUrl);
+router.post("/", shortUrl);
+router.get("/:newUrl", redirectToNewUrl);
 
-module.exports = router;
+module.exports = router
